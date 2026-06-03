@@ -232,16 +232,7 @@ h1.title .cx{color:var(--cyan)}
 .qlvl{font-family:var(--fmono);font-size:9.5px;letter-spacing:.22em;color:var(--cyand);text-transform:uppercase;margin-bottom:10px}
 .qtxt{font-size:1.1rem;font-weight:500;line-height:1.55;color:var(--txt)}
 
-/* ── HINT ── */
-.hint-box{background:linear-gradient(135deg,rgba(255,170,0,.04),rgba(255,170,0,.01));
-  border:1px solid rgba(255,170,0,.18);border-left:3px solid var(--amber);
-  border-radius:0 4px 4px 0;padding:14px 18px;margin-bottom:20px;
-  display:flex;align-items:flex-start;gap:12px;position:relative;overflow:hidden}
-.hint-box::before{content:'';position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(255,170,0,.03),transparent);pointer-events:none}
-.hint-lbl{font-family:var(--fmono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px}
-.hint-txt{font-size:.84rem;line-height:1.6;color:#c8a060;font-style:italic}
-.hint-txt em{color:#e0b87a;font-style:normal;font-weight:600}
+
 
 /* ── OPTIONS ── */
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
@@ -522,14 +513,6 @@ h1.title .cx{color:var(--cyan)}
     <div class="qmeta">
       <div class="qlvl" id="qlvl">NIVEL 1</div>
       <div class="qtxt" id="qtxt">Cargando...<span class="cur"></span></div>
-    </div>
-  </div>
-
-  <div class="hint-box">
-    <span style="font-size:1rem;flex-shrink:0;margin-top:1px;filter:drop-shadow(0 0 4px rgba(255,170,0,.5))">💡</span>
-    <div>
-      <div class="hint-lbl">Pista de contexto</div>
-      <div class="hint-txt" id="hint-txt">—</div>
     </div>
   </div>
 
@@ -881,7 +864,6 @@ function renderQ(){
   document.getElementById('qnum').textContent=String(curQ+1).padStart(2,'0');
   document.getElementById('qlvl').textContent=q.lvl;
   document.getElementById('qtxt').innerHTML=q.txt+'<span class="cur"></span>';
-  document.getElementById('hint-txt').innerHTML=q.hint;
   // Options
   const grid=document.getElementById('opts');
   grid.innerHTML='';
